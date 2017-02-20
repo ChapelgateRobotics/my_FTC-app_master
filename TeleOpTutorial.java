@@ -31,7 +31,10 @@ public class TeleOpTutorial extends LinearOpMode
 
         armServo = hardwareMap.servo.get("armServo");
 
+        // this initializes the servo
         armServo.setPosition(ARM_RETRACTED_POSITION);
+
+        sleep(2000);
 
         waitForStart();
 
