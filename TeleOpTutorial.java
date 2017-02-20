@@ -12,7 +12,7 @@ import com.qualcomm.robotcore.hardware.Servo;
 /**
  * Created by Kirk Frankfurth on 2/19/17.
  */
-//test update
+//test update made a update
 public class TeleOpTutorial extends LinearOpMode
 {
     private DcMotor motorLeft;
@@ -25,9 +25,11 @@ public class TeleOpTutorial extends LinearOpMode
 
     public void runOpMode() throws InterruptedException
     {
+        //this initalizes the motors
         motorLeft = hardwareMap.dcMotor.get("motorLeft");
         motorRight = hardwareMap.dcMotor.get("motorRight");
 
+        // this reverses the motor
         motorLeft.setDirection(DcMotor.Direction.REVERSE);
 
         armServo = hardwareMap.servo.get("armServo");
