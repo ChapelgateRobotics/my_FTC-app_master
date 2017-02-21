@@ -26,23 +26,24 @@ public class autonomous_tutorial_OpMode_Linear extends LinearOpMode {
 
     private Servo armServo;
 
+    double DRIVE_POWER = 1.0;
 
     @Override
-    public void runOpMode() {
+    public void runOpMode() throws InterruptedException{
         telemetry.addData("Status", "Initialized");
         telemetry.update();
 
         // Initialize motors
-        leftMotor = hardwareMap.dcMotor.get(leftMotor);
-        rightMotor = hardwareMap.dcMotor.get(rightMotor);
+        leftMotor = hardwareMap.dcMotor.get("leftMotor");
+        rightMotor = hardwareMap.dcMotor.get("rightMotor");
 
-        leftMotor.setMode(DcMotorController.RunMode.RUN_WITHOUT_ENCODERS);
-        rightMotor.setMode(DcMotorController.RunMode.RUN_WITHOUT_ENCODERS);
+        leftMotor.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+        rightMotor.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
 
         leftMotor.setDirection(DcMotor.Direction.REVERSE);
 
         // Initialize motors
-        armServo = hardwareMap.servo.get(armServo);
+        armServo = hardwareMap.servo.get("armServo");
 
         armServo.setPosition(0.8);
 
@@ -52,7 +53,7 @@ public class autonomous_tutorial_OpMode_Linear extends LinearOpMode {
 
         //Go Robot Go
 
-        DriveForward(DRIVE_POWER, 4000);
+        DriveForwardTime(DRIVE_POWER, 4000);
         //Thread.sleep(4000);
 
         //turn left
@@ -62,7 +63,7 @@ public class autonomous_tutorial_OpMode_Linear extends LinearOpMode {
         rightMotor.setPower(1);
        */
         Thread.sleep(500);
-        DriveForward(DRIVE_POWER, 4000);
+        DriveForwardTime(DRIVE_POWER, 4000);
         //Thread.sleep(4000);
 
         //turn right
@@ -72,7 +73,7 @@ public class autonomous_tutorial_OpMode_Linear extends LinearOpMode {
         rightMotor.setPower(-1);
         */
         Thread.sleep(500);
-        DriveForward(DRIVE_POWER, 4000);
+        DriveForwardTime(DRIVE_POWER, 4000);
         //Thread.sleep(4000);
 
         //stop
@@ -89,7 +90,7 @@ public class autonomous_tutorial_OpMode_Linear extends LinearOpMode {
 
 
     }
-    double DRIVE_POWER = 1.0;
+
 
     //Drive method
     public void DriveForward(double power)
