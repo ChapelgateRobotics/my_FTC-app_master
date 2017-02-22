@@ -17,6 +17,7 @@ public class KirkOp extends LinearOpMode {
 
     public void init()
     {
+            // this start the process
         backLeft = hardwareMap.dcMotor.get("backLeft");
         frontLeft = hardwareMap.dcMotor.get("frontLeft");
         backRight = hardwareMap.dcMotor.get("backRight");
