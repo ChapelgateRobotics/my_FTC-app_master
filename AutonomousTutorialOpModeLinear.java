@@ -16,7 +16,7 @@ import com.qualcomm.robotcore.util.ElapsedTime;
 
 @Autonomous(name="Autonomus template Linear OpMode", group="Linear Opmode")  // @Autonomous(...) is the other common choice
 @Disabled
-public class autonomous_tutorial_OpMode_Linear extends LinearOpMode {
+public class AutonomousTutorialOpModeLinear extends LinearOpMode {
 
     /* Declare OpMode members. */
     private ElapsedTime runtime = new ElapsedTime();
